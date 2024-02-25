@@ -8,13 +8,13 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.cs4520.assignment3.homeFragment"
+        android:name="com.example.assignment3.home.HomeFragment"
         android:label="HomeFragment">
     </fragment>
 
     <fragment
         android:id="@+id/mvpFragment"
-        android:name="com.cs4520.assignment3.mvpFragment"
+        android:name="com.example.assignment3.mvp.MVPCalculatorViewFragment"
         android:label="MVPFragment">
     </fragment>
     <fragment

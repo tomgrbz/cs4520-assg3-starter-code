@@ -3,7 +3,7 @@ package com.example.assignment3.mvp
 interface Contract {
     interface View {
         fun showResult(result: Double)
-        fun showErrorMessage(message: String)
+        fun displayToast(message: String)
     }
 
     interface Presenter {

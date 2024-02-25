@@ -1,4 +1,4 @@
-package com.example.assignment3.mvp
+package com.example.assignment3.mvvm
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,10 +8,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.cs4520.assignment3.databinding.HomeFragmentBinding
 import com.cs4520.assignment3.databinding.MvpCalculatorViewBinding
 
-class MVPCalculatorViewFragment: Fragment(), Contract.View {
+class MVVMCalculatorViewFragment: Fragment(), Contract.View {
 
     private lateinit var num1EditText: EditText
     private lateinit var num2EditText: EditText
