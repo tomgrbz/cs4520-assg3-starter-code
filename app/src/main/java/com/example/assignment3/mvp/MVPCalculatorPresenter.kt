@@ -14,6 +14,6 @@ class MVPCalculatorPresenter(private val view: Contract.View) : Contract.Present
             }
             else -> 0.0
         }
-        view.showResult(result)
+
     }
 }

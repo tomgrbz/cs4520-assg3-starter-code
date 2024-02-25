@@ -8,15 +8,16 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.cs4520.assignment3.databinding.MvpCalculatorViewBinding
 
-class MVVMCalculatorViewFragment: Fragment(), Contract.View {
+class MVVMCalculatorViewFragment: Fragment() {
 
     private lateinit var num1EditText: EditText
     private lateinit var num2EditText: EditText
     private lateinit var resultTextView: TextView
 
-    private lateinit var presenter: Contract.Presenter
+    private lateinit var viewModel: MVVMCalculatorViewModel
     private lateinit var calculatorViewBinding: MvpCalculatorViewBinding
 
     override fun onCreateView(
@@ -29,7 +30,7 @@ class MVVMCalculatorViewFragment: Fragment(), Contract.View {
         num1EditText = calculatorViewBinding.editTextNum1
         num2EditText = calculatorViewBinding.editTextNum2
         resultTextView = calculatorViewBinding.textViewResult
-        presenter = MVPCalculatorPresenter(this)
+        viewModel = ViewModelProvider(this)[MVVMCalculatorViewModel::class.java]
 
         val addButton = calculatorViewBinding.addButton
         val subButton = calculatorViewBinding.subButton
@@ -40,6 +41,10 @@ class MVVMCalculatorViewFragment: Fragment(), Contract.View {
         subButton.setOnClickListener { calcResult("sub") }
         mulButton.setOnClickListener { calcResult("mul") }
         divButton.setOnClickListener { calcResult("div") }
+
+        viewModel.result.observe(viewLifecycleOwner, {
+            if (result)
+        })
         return view
     }
 
@@ -57,10 +62,6 @@ class MVVMCalculatorViewFragment: Fragment(), Contract.View {
         num1EditText.text.clear()
         num2EditText.text.clear()
 
-    }
-
-    override fun showResult(result: Double) {
-        resultTextView.text = result.toString()
     }
 
     override fun displayToast(message: String) {
