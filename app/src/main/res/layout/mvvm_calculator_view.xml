@@ -1,0 +1,73 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#ffb3ba"
+    >
+    <EditText
+        android:id="@+id/editTextNum1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:inputType="numberDecimal"
+        android:hint="Enter number 1"/>
+
+    <EditText
+        android:id="@+id/editTextNum2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNum1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:inputType="numberDecimal"
+        android:hint="Enter number 2"/>
+
+    <TextView
+        android:id="@+id/textViewResult"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editTextNum2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Result"/>
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textViewResult"
+        android:layout_alignStart="@id/editTextNum1"
+        android:layout_marginTop="30dp"
+        android:text="Add"/>
+
+    <Button
+        android:id="@+id/subButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/addButton"
+        android:layout_alignStart="@id/addButton"
+        android:layout_marginTop="10dp"
+        android:text="Subtract"/>
+
+    <Button
+        android:id="@+id/multiplyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/subButton"
+        android:layout_alignStart="@id/subButton"
+        android:layout_marginTop="10dp"
+        android:text="Multiply"/>
+
+    <Button
+        android:id="@+id/divideButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/multiplyButton"
+        android:layout_alignStart="@id/multiplyButton"
+        android:layout_marginTop="10dp"
+        android:text="Divide"/>
+
+</LinearLayout>
