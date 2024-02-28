@@ -19,7 +19,7 @@
     </fragment>
     <fragment
         android:id="@+id/mvvmFragment"
-        android:name="com.cs4520.assignment3.mvvmFragment"
+        android:name="com.example.assignment3.mvvm.MVVMCalculatorViewFragment"
         android:label="MVVMFragment">
     </fragment>
     <action

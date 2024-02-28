@@ -50,6 +50,7 @@ class MVPCalculatorViewFragment: Fragment(), Contract.View {
 
         if (num1Str.isEmpty() || num2Str.isEmpty()) {
             displayToast("Invalid/Missing Input")
+            return
         }
 
         var num1 = num1Str.toDouble()

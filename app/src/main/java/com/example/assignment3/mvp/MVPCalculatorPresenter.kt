@@ -9,11 +9,12 @@ class MVPCalculatorPresenter(private val view: Contract.View) : Contract.Present
             "sub" -> model.subtract(num1, num2)
             "mul" -> model.multiply(num1, num2)
             "div" -> if (num2 != 0.0) model.divide(num1, num2) else {
-                view.displayToast("Can't divide by 0'")
+                view.displayToast("Can't divide by 0")
                 return
             }
             else -> 0.0
         }
+        view.showResult(result)
 
     }
 }

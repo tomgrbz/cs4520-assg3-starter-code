@@ -42,9 +42,13 @@ class MVVMCalculatorViewFragment: Fragment() {
         mulButton.setOnClickListener { calcResult("mul") }
         divButton.setOnClickListener { calcResult("div") }
 
-        viewModel.result.observe(viewLifecycleOwner, {
-            if (result)
-        })
+        viewModel.result.observe(viewLifecycleOwner) {
+            if (it.isNaN()) {
+                displayToast("Invalid argument/input")
+            } else {
+                resultTextView.text = it.toString()
+            }
+        }
         return view
     }
 
@@ -54,17 +58,18 @@ class MVVMCalculatorViewFragment: Fragment() {
 
         if (num1Str.isEmpty() || num2Str.isEmpty()) {
             displayToast("Invalid/Missing Input")
+            return
         }
 
         var num1 = num1Str.toDouble()
         var num2 = num2Str.toDouble()
-        presenter.calculate(num1, num2, operation)
+        viewModel.calculate(num1, num2, operation)
         num1EditText.text.clear()
         num2EditText.text.clear()
 
     }
 
-    override fun displayToast(message: String) {
+     fun displayToast(message: String) {
         Toast.makeText(activity, message, Toast.LENGTH_SHORT).show()
         return
     }
