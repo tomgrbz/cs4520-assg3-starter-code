@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.cs4520.assignment3.databinding.MvpCalculatorViewBinding
+import com.cs4520.assignment3.databinding.MvvmCalculatorViewBinding
 
 class MVVMCalculatorViewFragment: Fragment() {
 
@@ -18,14 +19,14 @@ class MVVMCalculatorViewFragment: Fragment() {
     private lateinit var resultTextView: TextView
 
     private lateinit var viewModel: MVVMCalculatorViewModel
-    private lateinit var calculatorViewBinding: MvpCalculatorViewBinding
+    private lateinit var calculatorViewBinding: MvvmCalculatorViewBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        calculatorViewBinding = MvpCalculatorViewBinding.inflate(inflater, container, false)
+        calculatorViewBinding = MvvmCalculatorViewBinding.inflate(inflater, container, false)
         val view = calculatorViewBinding.root
         num1EditText = calculatorViewBinding.editTextNum1
         num2EditText = calculatorViewBinding.editTextNum2
